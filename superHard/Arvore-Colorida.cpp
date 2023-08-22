@@ -3,11 +3,12 @@
 // https://neps.academy/br/exercise/777
 
 using namespace std;
-using ll = long long;
-#define Max 100
+// using ll = long long;
+// #define Max 10010
 
 vector<int> Answers;
-vector<vector<vector<int>>> vt (Max+1, vector<vector<int>> (Max+1, vector<int> (1, -1)));
+vector<vector<vector<int>>> vt;
+// (Max+1, vector<vector<int>> (Max+1, vector<int> (1, -1)));
 map<int,int> mp;
 // [ponto de inicio][ponto final][Vertices nessesarias] [i][f][0] = total d cores;
 //
@@ -56,7 +57,7 @@ void Link(int K){
             vector<int> nw_vec;
 
             for (int i = vt[num][K].size() - 2; i >= 0; i--) nw_vec.push_back(vt[num][K][i]); // -2 : removes the copy
-            for (int i = vt[nm][K].size() - 1; i >= 0; i--) nw_vec.push_back(vt[nm][K][i]);
+            for (int i = vt[nm][K].size() - 1; i >= 0; i--)  nw_vec.push_back(vt[nm][K][i]);
 
             // sort(nw_vec.begin(), nw_vec.end()); no need
 
@@ -69,7 +70,6 @@ void Link(int K){
 void ChangeColor(int vertices, int color) {
     mp[vertices] = color;
 }
-
 
 void ShowColors(int v_1, int v_2){
     map<int,int> colors;
@@ -85,13 +85,17 @@ void ShowColors(int v_1, int v_2){
 
 int main(int argc, char const *argv[])
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
     cin >> N;
 
+    vt.push_back(vector<vector<int>> (0));
     for (int i = 1; i <= N; i++)
     {
         int vl;
         cin >> vl;
         mp[vl] = vl;
+        vt.push_back(vector<vector<int>> (N+1, vector<int> (1, -1)));
     }
     
     for (int i = 1; i < N; i++)
@@ -104,14 +108,14 @@ int main(int argc, char const *argv[])
         vt[vl2][vl1][0] = vl2;
         vt[vl2][vl1].push_back(vl1);
 
-        Link(vl1);
-        Link(vl2);
+        // Link(vl1);
+        // Link(vl2);
     }
     
-    // for (int i = 1; i <= N; i++)
-    // {
-    //     Link(i);
-    // }
+    for (int i = 1; i <= N; i++)
+    {
+        Link(i);
+    }
     
 
     // for (int i = 1; i <= N; i++) test thing
