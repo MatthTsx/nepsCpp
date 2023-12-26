@@ -1,7 +1,13 @@
 #include<bits/stdc++.h>
-// https://neps.academy/exercise/167
+// https://neps.academy/exercise/164
 
 using namespace std;
+
+int solve(int L, int C){
+    int r = L%2 == 0 ? -1 : 1;
+    if(C%2 == 0) r *= -1;
+    return r;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -12,6 +18,6 @@ int main(int argc, char const *argv[])
     int L, C;
     cin >> L >> C;
 
-    cout << (L%2 != 0 ? C*L + (C-1)*(L-1) : C*(L-1) + (C-1)*(L-1)) << "\n" << 2*(L + C - 2);
+    cout << (solve(L,C) == -1 ? "0" : "1");
     return 0;
 }

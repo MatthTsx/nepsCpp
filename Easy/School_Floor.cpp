@@ -12,6 +12,6 @@ int main(int argc, char const *argv[])
     int L, C;
     cin >> L >> C;
 
-    cout << (L%2 != 0 ? C*L + (C-1)*(L-1) : C*(L-1) + (C-1)*(L-1)) << "\n" << 2*(L + C - 2);
+    cout << (L*C + (L-1)*(C-1)) << "\n" << 2*(L + C - 2);
     return 0;
 }

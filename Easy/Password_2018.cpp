@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
-// https://neps.academy/exercise/167
-
+// https://neps.academy/exercise/153
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -8,10 +7,14 @@ int main(int argc, char const *argv[])
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
+    int n, r = 0;
 
-    int L, C;
-    cin >> L >> C;
+    while(true){
+        cin >> n;
+        if(n == 2018) break;
+        r++;
+    }
 
-    cout << (L%2 != 0 ? C*L + (C-1)*(L-1) : C*(L-1) + (C-1)*(L-1)) << "\n" << 2*(L + C - 2);
+    cout << r;
     return 0;
 }

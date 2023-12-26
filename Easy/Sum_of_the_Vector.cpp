@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
-// https://neps.academy/exercise/167
-
+// https://neps.academy/exercise/326
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -9,9 +8,15 @@ int main(int argc, char const *argv[])
     cin.tie(0);
     cout.tie(0);
 
-    int L, C;
-    cin >> L >> C;
+    int N, resp = 0;
+    cin >> N;
 
-    cout << (L%2 != 0 ? C*L + (C-1)*(L-1) : C*(L-1) + (C-1)*(L-1)) << "\n" << 2*(L + C - 2);
+    while(N--){
+        int n;
+        cin >> n;
+        resp += n;
+    }
+
+    cout << resp;
     return 0;
 }

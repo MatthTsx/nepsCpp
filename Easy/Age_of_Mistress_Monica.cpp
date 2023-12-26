@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
-// https://neps.academy/exercise/167
-
+// https://neps.academy/exercise/463
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -9,9 +8,9 @@ int main(int argc, char const *argv[])
     cin.tie(0);
     cout.tie(0);
 
-    int L, C;
-    cin >> L >> C;
+    int M, I1, I2;
+    cin >> M >> I1 >> I2;
+    cout << max(max(M - I1 - I2, I1), I2);
 
-    cout << (L%2 != 0 ? C*L + (C-1)*(L-1) : C*(L-1) + (C-1)*(L-1)) << "\n" << 2*(L + C - 2);
     return 0;
 }
