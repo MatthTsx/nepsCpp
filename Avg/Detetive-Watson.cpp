@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-// https://neps.academy/br/exercise/2111 
+// https://neps.academy/br/exercise/2111
 using namespace std;
 
 int main(int argc, char const *argv[])
