@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     cin >> N >> M;
 
     for(int i = M; i < M*10; i += M){
-        if((float) (i+1)/N != floor((float) (i+1)/N) && (i+1)/N >= M) continue;
+        if((float) (i+1)/N != floor((float) (i+1)/N) || (i+1)/N >= M || (i+1)/N == 0) continue;
         cout << (i+1)/N;
         foi = true;
         break;
